@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eurolux Australia – Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <button class="burger" aria-label="Open menu"></button>
+        <a class="logo" href="index.html"><img src="assets/logo.svg" alt="Eurolux Australia"/></a>
+        <nav class="utility-nav">
+            <a href="#" class="icon-btn" id="wishlistBtn" aria-label="Wishlist"></a>
+            <button class="icon-btn" id="searchToggle" aria-label="Search"></button>
+            <a href="#" class="icon-btn" aria-label="Account"></a>
+            <a href="cart.html" class="icon-btn" aria-label="Cart"><span id="cartCount" class="badge">0</span></a>
+        </nav>
+        </header>
+
+        <!-- category rail (hidden on checkout / confirm) -->
+        <nav class="cat-rail" aria-label="Primary categories">
+        <a href="products.html?cat=Aqua%20Blade">Aqua Blade</a>
+        <a href="products.html?cat=Cookware">Cookware</a>
+        <a href="products.html?cat=Rake%20Broom">Rake Broom</a>
+        <a href="products.html?cat=Trimmer%20Head">Trimmer Head</a>
+        <a href="products.html?cat=Stain%20Remover">Stain Remover</a>
+        </nav>
+
+        <!-- search overlay -->
+        <div id="searchOverlay" class="search-overlay" hidden>
+        <button class="back-btn" id="searchBack" aria-label="Back"></button>
+        <form id="searchForm" role="search">
+            <input id="searchInput" type="search" placeholder="Search…" aria-label="Search products"/>
+        </form>
+        <button class="close-btn" id="searchClose" aria-label="Close search"></button>
+        </div>
+
+        <main id="app">
+  <header class="site-header">…</header>
+  <nav class="cat-rail">…</nav>
+
+  <main id="app">
+    <!-- hero carousel (static images for demo) -->
+    <section class="hero">
+      <div class="carousel" aria-label="Featured products">
+        <img src="assets/hero-aqua-blade.jpg" alt="Aqua Blade demo" />
+      </div>
+    </section>
+
+    <!-- category tiles grid -->
+    <section class="cat-grid" aria-label="Shop by category">
+      <a class="cat-card" href="products.html?cat=Popular" style="--bg:url('assets/tiles/popular.jpg')">Popular Products</a>
+      <a class="cat-card" href="products.html?cat=Aqua%20Blade" style="--bg:url('assets/tiles/aqua.jpg')">Aqua Blade</a>
+      <a class="cat-card" href="products.html?cat=Cookware" style="--bg:url('assets/tiles/cookware.jpg')">Cookware</a>
+      <a class="cat-card" href="products.html?cat=Rake%20Broom" style="--bg:url('assets/tiles/rake.jpg')">Rake Broom</a>
+      <a class="cat-card" href="products.html?cat=Trimmer%20Head" style="--bg:url('assets/tiles/trimmer.jpg')">Trimmer Head</a>
+      <a class="cat-card" href="products.html?cat=Stain%20Remover" style="--bg:url('assets/tiles/stain.jpg')">Stain Remover</a>
+    </section>
+  </main>
+
+  <script>
+    // minimalist hero auto‑slide (every 5 s)
+    const slides = document.querySelectorAll('.carousel img');
+    let idx=0; setInterval(()=>{slides[idx].hidden=true; idx=(idx+1)%slides.length; slides[idx].hidden=false;},5000);
+  </script>
+</body>
+</html>
