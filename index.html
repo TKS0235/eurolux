@@ -1,112 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Eurolux Australia – Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eurolux Australia</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Persistent header -->
-  <header class="site-header" id="header" aria-label="Primary">
-    <button class="menu-toggle" aria-label="Open navigation" data-open-menu>
-      <img src="menu.png" alt="Menu" class="icon icon-menu">
-    </button>
-    <a href="index.html" class="logo" aria-label="Eurolux Australia home">
-      <img src="logo.svg" alt="Eurolux Australia" />
-    </a>
-    <nav class="header-actions" aria-label="User actions">
-      <button aria-label="Wishlist" class="icon-btn">
-        <img src="heart.png" alt="Wishlist" class="icon icon-heart">
-      </button>
-      <button aria-label="Search" class="icon-btn" data-search-open>
-        <img src="search.png" alt="Search" class="icon icon-search">
-      </button>
-      <a aria-label="Account" class="icon-btn" href="#">
-        <img src="user.png" alt="Account" class="icon icon-user">
-      </a>
-      <a aria-label="Cart" class="icon-btn" href="cart.html">
-        <img src="cart.png" alt="Cart" class="icon icon-cart">
-        <span class="cart-count" data-cart-count>0</span>
-      </a>
-    </nav>
-  </header>
-
-  <!-- Horizontal category nav -->
-  <nav class="category-bar" id="catbar" aria-label="Product categories">
-    <ul>
-      <li><a href="products.html?cat=Aqua%20Blade">Aqua Blade</a></li>
-      <li><a href="products.html?cat=Cookware">Cookware</a></li>
-      <li><a href="products.html?cat=Rake%20Broom">Rake Broom</a></li>
-      <li><a href="products.html?cat=Trimmer%20Head">Trimmer Head</a></li>
-      <li><a href="products.html?cat=Stain%20Remover">Stain Remover</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <!-- Hero carousel (auto + swipe) -->
-    <section class="hero" aria-label="Featured promotions">
-      <div class="carousel" data-carousel>
-        <div class="carousel-track">
-          <img src="hero1.jpg" alt="Aqua Blade attachment on grass" />
-          <img src="hero2.jpg" alt="German‑made cookware" />
-          <img src="hero3.jpg" alt="Powerful rake broom" />
+    <!-- Header -->
+    <header class="header">
+        <button class="header__menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="index.html" class="header__logo">
+            <img src="images/logo/eurolux-logo.svg" alt="Eurolux Australia">
+        </a>
+        <div class="header__icons">
+            <a href="#" class="header__icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="#" class="header__icon header__icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
         </div>
-        <div class="carousel-dots" data-carousel-dots></div>
-      </div>
-    </section>
-    
-    <!-- Category tiles -->
-    <section class="tiles" aria-label="Shop by category">
-      <article class="tile">
-        <a href="products.html">
-          <h2>Popular<br />Products</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-      <article class="tile">
-        <a href="products.html?cat=Aqua%20Blade">
-          <h2>Aqua<br />Blade</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-      <article class="tile">
-        <a href="products.html?cat=Cookware">
-          <h2>Cookware</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-      <article class="tile">
-        <a href="products.html?cat=Rake%20Broom">
-          <h2>Rake<br />Broom</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-      <article class="tile">
-        <a href="products.html?cat=Trimmer%20Head">
-          <h2>Trimmer<br />Head</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-      <article class="tile">
-        <a href="products.html?cat=Stain%20Remover">
-          <h2>Stain<br />Remover</h2>
-          <img src="arrow-up-right.png" alt="" class="icon icon-arrow">
-        </a>
-      </article>
-    </section>
-  </main>
+    </header>
 
-  <!-- Search overlay -->
-  <div class="search-overlay" data-search-overlay hidden>
-    <button class="back-btn" aria-label="Back" data-search-close>
-      <img src="back.png" alt="Back" class="icon icon-back">
-    </button>
-    <input type="search" placeholder="Search..." aria-label="Search" data-search-input />
-    <button class="clear-btn" aria-label="Clear" data-search-clear hidden>
-      <img src="close.png" alt="Clear" class="icon icon-close">
-    </button>
-  </div>
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <a href="#" class="nav-tabs__item">Aqua Blade</a>
+        <a href="#" class="nav-tabs__item">Cookware</a>
+        <a href="#" class="nav-tabs__item">Rake Broom</a>
+        <a href="#" class="nav-tabs__item">Trimmer Head</a>
+        <a href="#" class="nav-tabs__item">Stain Remover</a>
+    </nav>
 
+    <!-- Carousel -->
+    <div class="carousel">
+        <img src="images/banners/trimmer-banner.jpg" alt="Trimmer" class="carousel__image">
+        <div class="carousel__dots">
+            <span class="carousel__dot"></span>
+            <span class="carousel__dot"></span>
+            <span class="carousel__dot carousel__dot--active"></span>
+        </div>
+    </div>
 
+    <!-- Category Grid -->
+    <div class="category-grid">
+        <a href="#" class="category-card">
+            <img src="images/categories/popular-products.jpg" alt="Popular Products" class="category-card__image">
+            <div class="category-card__title">Popular Products</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+        <a href="#" class="category-card">
+            <img src="images/categories/aqua-blade.jpg" alt="Aqua Blade" class="category-card__image">
+            <div class="category-card__title">Aqua Blade</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+        <a href="#" class="category-card">
+            <img src="images/categories/cookware.jpg" alt="Cookware" class="category-card__image">
+            <div class="category-card__title">Cookware</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+        <a href="#" class="category-card">
+            <img src="images/categories/rake-broom.jpg" alt="Rake Broom" class="category-card__image">
+            <div class="category-card__title">Rake Broom</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+        <a href="#" class="category-card">
+            <img src="images/categories/trimmer-head.jpg" alt="Trimmer Head" class="category-card__image">
+            <div class="category-card__title">Trimmer Head</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+        <a href="#" class="category-card">
+            <img src="images/categories/stain-remover.jpg" alt="Stain Remover" class="category-card__image">
+            <div class="category-card__title">Stain Remover</div>
+            <div class="category-card__arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
