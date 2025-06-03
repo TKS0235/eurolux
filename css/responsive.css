@@ -1,0 +1,208 @@
+@media (min-width: 768px) {
+    /* Header */
+    .header {
+        padding: 20px;
+    }
+    
+    .header__logo img {
+        height: 50px;
+    }
+    
+    /* Navigation */
+    .nav-tabs {
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .nav-tabs__item {
+        padding: 10px 25px;
+    }
+    
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Product Card */
+    .product-card__info {
+        padding: 15px;
+    }
+    
+    .product-card__title {
+        font-size: 16px;
+    }
+    
+    /* Product Detail */
+    .product-detail {
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .product-detail__image-container {
+        max-width: 500px;
+        margin: 0 auto 30px;
+    }
+    
+    .product-detail__thumbnails {
+        justify-content: center;
+    }
+    
+    .product-detail__thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .product-detail__title {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .product-detail__rating {
+        justify-content: center;
+        font-size: 16px;
+    }
+    
+    .product-detail__price {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .product-detail__tabs {
+        justify-content: center;
+    }
+    
+    .product-detail__tab {
+        padding: 15px 30px;
+    }
+    
+    .product-detail__description {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        font-size: 16px;
+    }
+    
+    .product-detail__quantity {
+        max-width: 200px;
+        margin: 0 auto 30px;
+    }
+    
+    .product-detail__add-to-cart {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Home Page */
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Cart Page */
+    .cart {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    .cart-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .cart-item__image-container {
+        width: 120px;
+        margin-right: 20px;
+    }
+    
+    .cart__summary {
+        max-width: 400px;
+        margin-left: auto;
+    }
+    
+    .cart__checkout-btn {
+        max-width: 300px;
+    }
+    
+    /* Checkout Page */
+    .checkout {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    
+    /* Confirmation Page */
+    .confirmation {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    
+    .confirmation__continue-btn {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Surface Pro 7 specific styles (1368px) */
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .product-detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    .product-detail__back {
+        grid-column: 1 / -1;
+    }
+    
+    .product-detail__image-container,
+    .product-detail__thumbnails {
+        grid-column: 1;
+    }
+    
+    .product-detail__title,
+    .product-detail__rating,
+    .product-detail__price,
+    .product-detail__tabs,
+    .product-detail__description,
+    .product-detail__quantity,
+    .product-detail__add-to-cart {
+        grid-column: 2;
+        text-align: left;
+        margin: 0 0 20px;
+    }
+    
+    .product-detail__rating {
+        justify-content: flex-start;
+    }
+    
+    .checkout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+    }
+    
+    .checkout__title,
+    .checkout__section:nth-child(2) {
+        grid-column: 1;
+    }
+    
+    .checkout__section:nth-child(3),
+    .checkout__summary,
+    .checkout__place-order-btn,
+    .checkout__back-btn {
+        grid-column: 2;
+        grid-row: 2 / span 3;
+    }
+}
