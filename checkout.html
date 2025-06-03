@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Eurolux Australia</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for checkout page */
+        .checkout {
+            padding: 15px;
+        }
+        
+        .checkout__title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .checkout__section {
+            margin-bottom: 25px;
+        }
+        
+        .checkout__section-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .checkout__form-group {
+            margin-bottom: 15px;
+        }
+        
+        .checkout__label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .checkout__input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .checkout__input:focus {
+            outline: none;
+            border-color: #0057B8;
+        }
+        
+        .checkout__summary {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .checkout__summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .checkout__summary-row--total {
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .checkout__place-order-btn {
+            background-color: #0057B8;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .checkout__back-btn {
+            text-align: center;
+            display: block;
+            color: #0057B8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="header__menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="index.html" class="header__logo">
+            <img src="images/logo/eurolux-logo.webp" alt="Eurolux Australia">
+        </a>
+        <div class="header__icons">
+            <a href="#" class="header__icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="cart.html" class="header__icon header__icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Checkout Page -->
+    <div class="checkout">
+        <h1 class="checkout__title">Checkout</h1>
+        
+        <div class="checkout__section">
+            <h2 class="checkout__section-title">Shipping Information</h2>
+            
+            <div class="checkout__form-group">
+                <label for="fullName" class="checkout__label">Full Name</label>
+                <input type="text" id="fullName" class="checkout__input" placeholder="Enter your full name">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="email" class="checkout__label">Email Address</label>
+                <input type="email" id="email" class="checkout__input" placeholder="Enter your email">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="phone" class="checkout__label">Phone Number</label>
+                <input type="tel" id="phone" class="checkout__input" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="address" class="checkout__label">Address</label>
+                <input type="text" id="address" class="checkout__input" placeholder="Enter your address">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="city" class="checkout__label">City</label>
+                <input type="text" id="city" class="checkout__input" placeholder="Enter your city">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="state" class="checkout__label">State</label>
+                <input type="text" id="state" class="checkout__input" placeholder="Enter your state">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="postcode" class="checkout__label">Postcode</label>
+                <input type="text" id="postcode" class="checkout__input" placeholder="Enter your postcode">
+            </div>
+        </div>
+        
+        <div class="checkout__section">
+            <h2 class="checkout__section-title">Payment Information</h2>
+            
+            <div class="checkout__form-group">
+                <label for="cardName" class="checkout__label">Name on Card</label>
+                <input type="text" id="cardName" class="checkout__input" placeholder="Enter name on card">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="cardNumber" class="checkout__label">Card Number</label>
+                <input type="text" id="cardNumber" class="checkout__input" placeholder="Enter card number">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="expiry" class="checkout__label">Expiry Date</label>
+                <input type="text" id="expiry" class="checkout__input" placeholder="MM/YY">
+            </div>
+            
+            <div class="checkout__form-group">
+                <label for="cvv" class="checkout__label">CVV</label>
+                <input type="text" id="cvv" class="checkout__input" placeholder="Enter CVV">
+            </div>
+        </div>
+        
+        <div class="checkout__summary">
+            <div class="checkout__summary-row">
+                <span>Subtotal</span>
+                <span>$214.45</span>
+            </div>
+            <div class="checkout__summary-row">
+                <span>Shipping</span>
+                <span>$10.00</span>
+            </div>
+            <div class="checkout__summary-row checkout__summary-row--total">
+                <span>Total</span>
+                <span>$224.45</span>
+            </div>
+        </div>
+        
+        <a href="confirmation.html" class="checkout__place-order-btn">
+            Place Order
+        </a>
+        
+        <a href="cart.html" class="checkout__back-btn">
+            Back to Cart
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
