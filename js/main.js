@@ -208,15 +208,17 @@ function handleQuantityChange(e) {
 
 function addToCart(e) {
     e.preventDefault();
-    // Add to cart logic
-    alert('Product added to cart!');
+    // Cart logic is now handled by CartManager in cart.js
+    // This function remains for compatibility but actual cart functionality
+    // is handled by the CartManager class
 }
 
 function quickAddToCart(e) {
     e.preventDefault();
     e.stopPropagation();
-    // Quick add to cart logic
-    alert('Product added to cart!');
+    // Cart logic is now handled by CartManager in cart.js
+    // This function remains for compatibility but actual cart functionality
+    // is handled by the CartManager class
 }
 
 function switchTab(e) {

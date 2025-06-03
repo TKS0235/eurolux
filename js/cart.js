@@ -3,9 +3,7 @@ class CartManager {
     constructor() {
         this.cart = this.loadCart();
         this.init();
-    }
-
-    init() {
+    }    init() {
         this.updateCartBadge();
         this.bindEvents();
     }
@@ -37,13 +35,147 @@ class CartManager {
     handleProductCardAdd(productCard) {
         const product = this.extractProductFromCard(productCard);
         this.addToCart(product);
-        this.showCartAddedFeedback();
+        this.showCartAddedPopup(product);
     }
 
     handleProductDetailAdd() {
         const product = this.extractProductFromDetail();
         const quantity = parseInt(document.querySelector('.product-detail__quantity-input')?.value || 1);
         this.addToCart(product, quantity);
+        this.showCartAddedPopup(product, quantity);
+    }
+
+    createPopupContainer() {
+        if (!document.getElementById('cartPopupContainer')) {
+            const container = document.createElement('div');
+            container.id = 'cartPopupContainer';
+            container.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+                pointer-events: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;            `;
+            document.body.appendChild(container);
+        }
+    }    showCartAddedPopup(product, quantity = 1) {
+        // Create popup container if it doesn't exist
+        this.createPopupContainer();
+        
+        const container = document.getElementById('cartPopupContainer');
+        if (!container) return;
+
+        // Remove any existing popup
+        const existingPopup = container.querySelector('.cart-popup');
+        if (existingPopup) {
+            existingPopup.remove();
+        }
+
+        // Calculate subtotal for the popup
+        const subtotal = product.price * quantity;
+
+        // Get suggested products (example products similar to what's in the screenshot)
+        const suggestedProducts = this.getSuggestedProducts(product);
+
+        // Create popup
+        const popup = document.createElement('div');
+        popup.className = 'cart-popup';
+        popup.innerHTML = `
+            <div class="cart-popup__content">
+                <div class="cart-popup__header">
+                    <h3 class="cart-popup__title">Product has been added to your cart</h3>
+                    <button class="cart-popup__close" onclick="this.closest('.cart-popup').remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="cart-popup__subtotal">
+                    <span class="cart-popup__subtotal-text">Subtotal | ${quantity} product${quantity > 1 ? 's' : ''}</span>
+                    <span class="cart-popup__subtotal-price">$${subtotal.toFixed(2)}</span>
+                </div>
+
+                <div class="cart-popup__suggested">
+                    <h4 class="cart-popup__suggested-title">Items purchased together</h4>
+                    <div class="cart-popup__suggested-products">
+                        ${suggestedProducts.map(suggestedProduct => `
+                            <div class="cart-popup__suggested-item">
+                                <div class="cart-popup__suggested-image">
+                                    <button class="cart-popup__wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <img src="${suggestedProduct.image}" alt="${suggestedProduct.title}">
+                                </div>
+                                <div class="cart-popup__suggested-details">
+                                    <h5 class="cart-popup__suggested-name">${suggestedProduct.title}</h5>
+                                    <div class="cart-popup__suggested-rating">
+                                        <div class="cart-popup__suggested-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="cart-popup__suggested-reviews">4.9 (No Review)</span>
+                                    </div>
+                                    <div class="cart-popup__suggested-price-cart">
+                                        <span class="cart-popup__suggested-price">$${suggestedProduct.price.toFixed(2)}</span>
+                                        <button class="cart-popup__suggested-cart-btn" onclick="cartManager.addToCartFromPopup('${suggestedProduct.id}', '${suggestedProduct.title}', ${suggestedProduct.price}, '${suggestedProduct.image}')">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="cart-popup__actions">
+                    <button class="cart-popup__view-cart" onclick="window.location.href='cart.html'">
+                        View My Cart
+                    </button>
+                    <button class="cart-popup__continue" onclick="this.closest('.cart-popup').remove()">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        `;        // Add styles
+        popup.style.cssText = `
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            pointer-events: all;
+            transition: all 0.3s ease;
+            width: 95%;
+            max-width: 800px;
+            min-width: 320px;
+        `;
+
+        container.appendChild(popup);
+
+        // Animate in
+        setTimeout(() => {
+            popup.style.transform = 'translate(-50%, -50%) scale(1)';
+            popup.style.opacity = '1';
+        }, 10);
+
+        // Auto-close after 5 seconds
+        setTimeout(() => {
+            if (popup.parentNode) {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    popup.remove();
+                }, 300);
+            }
+        }, 5000);
+
+        // Also animate cart icon
         this.showCartAddedFeedback();
     }
 
@@ -56,6 +188,72 @@ class CartManager {
             setTimeout(() => {
                 cartIcon.style.transform = 'scale(1)';
             }, 200);
+        }
+    }
+
+    getSuggestedProducts(product) {
+        // Return sample suggested products based on the product type
+        const aquaBladeProducts = [
+            {
+                id: 'aqua-blade-22cm',
+                title: 'Aqua Blade',
+                price: 39.95,
+                image: 'images/products/aqua-blade-22cm-set.webp'
+            },
+            {
+                id: 'aqua-blade-full-set-alt',
+                title: 'Aqua Blade',
+                price: 39.95,
+                image: 'images/products/aqua-blade-full-set.webp'
+            }
+        ];
+
+        const cookwareProducts = [
+            {
+                id: 'frying-pan-20cm',
+                title: 'Frying Pan 20cm',
+                price: 29.95,
+                image: 'images/products/frying-pan-20cm.webp'
+            },
+            {
+                id: 'cookware-set',
+                title: 'Cookware Set',
+                price: 49.95,
+                image: 'images/products/frying-pan-20cm.webp'
+            }
+        ];
+
+        // Return appropriate suggested products based on current product
+        if (product.title.toLowerCase().includes('aqua') || product.title.toLowerCase().includes('blade')) {
+            return aquaBladeProducts;
+        } else if (product.title.toLowerCase().includes('pan') || product.title.toLowerCase().includes('cook')) {
+            return cookwareProducts;
+        } else {
+            // Default suggestions
+            return aquaBladeProducts;
+        }
+    }
+
+    addToCartFromPopup(id, title, price, image) {
+        const product = {
+            id,
+            title,
+            price,
+            image,
+            link: '#'
+        };
+        this.addToCart(product);
+        
+        // Update the suggested product button to show it's been added
+        const button = event.target;
+        if (button) {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i>';
+            button.style.background = '#28a745';
+            setTimeout(() => {
+                button.innerHTML = originalContent;
+                button.style.background = '';
+            }, 1000);
         }
     }
 
