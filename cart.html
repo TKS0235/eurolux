@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Eurolux Australia</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="header__menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="index.html" class="header__logo">
+            <img src="images/logo/eurolux-logo.png" alt="Eurolux Australia">
+        </a>
+        <div class="header__icons">
+            <a href="#" class="header__icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="cart.html" class="header__icon header__icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Cart Page -->
+    <div class="cart">
+        <h1 class="cart__title">Shopping Cart</h1>
+        
+        <div class="cart__items">
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+                <div class="cart-item__image-container">
+                    <img src="images/products/aqua-blade-full-set.jpg" alt="Aqua Blade Full Set" class="cart-item__image">
+                </div>
+                <div class="cart-item__details">
+                    <h3 class="cart-item__title">Aqua Blade Full Set</h3>
+                    <div class="cart-item__price">$39.95</div>
+                    <div class="cart-item__quantity">
+                        <button class="cart-item__quantity-btn">-</button>
+                        <input type="text" value="1" class="cart-item__quantity-input">
+                        <button class="cart-item__quantity-btn">+</button>
+                    </div>
+                </div>
+                <button class="cart-item__remove">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            
+            <!-- Cart Item 2 -->
+            <div class="cart-item">
+                <div class="cart-item__image-container">
+                    <img src="images/products/frying-pan-20cm.jpg" alt="Frying Pan 20cm" class="cart-item__image">
+                </div>
+                <div class="cart-item__details">
+                    <h3 class="cart-item__title">Frying Pan 20cm</h3>
+                    <div class="cart-item__price">$174.50</div>
+                    <div class="cart-item__quantity">
+                        <button class="cart-item__quantity-btn">-</button>
+                        <input type="text" value="1" class="cart-item__quantity-input">
+                        <button class="cart-item__quantity-btn">+</button>
+                    </div>
+                </div>
+                <button class="cart-item__remove">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="cart__summary">
+            <div class="cart__summary-row">
+                <span>Subtotal</span>
+                <span>$214.45</span>
+            </div>
+            <div class="cart__summary-row">
+                <span>Shipping</span>
+                <span>$10.00</span>
+            </div>
+            <div class="cart__summary-row cart__summary-row--total">
+                <span>Total</span>
+                <span>$224.45</span>
+            </div>
+        </div>
+        
+        <a href="checkout.html" class="cart__checkout-btn">
+            Proceed to Checkout
+        </a>
+        
+        <a href="index.html" class="cart__continue-shopping">
+            Continue Shopping
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
