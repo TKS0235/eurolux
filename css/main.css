@@ -419,32 +419,55 @@ ul, ol {
 /* Home page */
 .carousel {
     position: relative;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%; /* Adjust as needed */
+    margin: auto;
 }
 
-.carousel__image {
+.carousel__track-container {
+    overflow: hidden;
     width: 100%;
-    height: auto;
+}
+
+.carousel__track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding: 0; /* Reset default ul padding */
+    margin: 0; /* Reset default ul margin */
+    list-style: none; /* Reset default ul list-style */
+}
+
+.carousel__slide {
+    min-width: 100%;
+    flex: 0 0 100%; /* Ensure slide takes full width and doesn't shrink/grow */
+    box-sizing: border-box;
+}
+
+.carousel__slide img {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio, or set a fixed height */
+    object-fit: cover; /* Ensures image covers the slide area */
 }
 
 .carousel__dots {
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
+    padding: 10px 0;
 }
 
 .carousel__dot {
-    width: 8px;
-    height: 8px;
+    border: none;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #ccc;
     margin: 0 5px;
+    cursor: pointer;
 }
 
 .carousel__dot--active {
-    background-color: white;
+    background-color: #333;
 }
 
 .category-grid {
