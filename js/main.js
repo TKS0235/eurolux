@@ -74,17 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Initialize carousel only if carousel elements exist
     const track = document.querySelector('.carousel__track');
-    if (!track) {
-        console.error('Carousel track not found.');
-        return;
-    }
-    const slides = Array.from(track.children);
     const dotsContainer = document.querySelector('.carousel__dots');
-    if (!dotsContainer) {
-        console.error('Carousel dots container not found.');
+    
+    // Exit early if carousel elements don't exist (not on homepage)
+    if (!track || !dotsContainer) {
+        console.log('Carousel elements not found - likely not on homepage');
         return;
     }
+    
+    const slides = Array.from(track.children);
     const dots = Array.from(dotsContainer.children);
 
     if (slides.length === 0) {
