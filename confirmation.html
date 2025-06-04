@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Eurolux Australia</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for confirmation page */
+        .confirmation {
+            padding: 20px 15px;
+            text-align: center;
+        }
+        
+        .confirmation__icon {
+            color: #4CAF50;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation__title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .confirmation__message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .confirmation__order-number {
+            font-weight: 700;
+        }
+        
+        .confirmation__details {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .confirmation__section-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .confirmation__item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .confirmation__total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .confirmation__continue-btn {
+            background-color: #0057B8;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="header__menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="index.html" class="header__logo">
+            <img src="images/logo/eurolux-logo.webp" alt="Eurolux Australia">
+        </a>
+        <div class="header__icons">
+            <a href="#" class="header__icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#" class="header__icon">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="cart.html" class="header__icon header__icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Confirmation Page -->
+    <div class="confirmation">
+        <div class="confirmation__icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1 class="confirmation__title">Order Confirmed!</h1>
+        
+        <p class="confirmation__message">
+            Thank you for your purchase. Your order <span class="confirmation__order-number">#EL12345</span> has been confirmed.
+        </p>
+        
+        <div class="confirmation__details">
+            <h2 class="confirmation__section-title">Order Summary</h2>
+            
+            <div class="confirmation__item">
+                <span>Aqua Blade Full Set</span>
+                <span>$39.95</span>
+            </div>
+            
+            <div class="confirmation__item">
+                <span>Frying Pan 20cm</span>
+                <span>$174.50</span>
+            </div>
+            
+            <div class="confirmation__item">
+                <span>Shipping</span>
+                <span>$10.00</span>
+            </div>
+            
+            <div class="confirmation__total">
+                <span>Total</span>
+                <span>$224.45</span>
+            </div>
+        </div>
+        
+        <a href="index.html" class="confirmation__continue-btn">
+            Continue Shopping
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart-links.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

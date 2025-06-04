@@ -1,0 +1,4 @@
+/* Import main CSS and responsive CSS */
+@import url('main.css');
+@import url('cart.css');
+@import url('responsive.css');

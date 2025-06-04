@@ -1,0 +1,24 @@
+/* Eurolux logo */
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo img {
+    max-width: 880px; /* Increased from 680px */
+    height: 700px; /* Increased from 500px */
+}
+
+/* Placeholder for logo image */
+.logo-placeholder {
+    width: 180px;
+    height: 40px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    border-radius: 5px;
+}
