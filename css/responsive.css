@@ -1,11 +1,14 @@
-@media (min-width: 768px) {
-    /* Header */
+@media (min-width: 768px) {    /* Header */
     .header {
-        padding: 20px;
+        padding: 18px 24px;
+    }
+    
+    .header__logo {
+        max-width: 350px;
     }
     
     .header__logo img {
-        height: 50px;
+        height: 70px;
     }
     
     /* Navigation */
@@ -97,11 +100,8 @@
         max-width: 300px;
         margin: 0 auto;
     }
-    
-    /* Home Page */
-    .category-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+      /* Home Page - Keep 2 columns for 3x2 layout */
+    /* .category-grid override removed to maintain 3x2 layout */
     
     /* Cart Page */
     .cart {
@@ -169,15 +169,52 @@
     }
 }
 
-/* Surface Pro 7 specific styles (1368px) */
+/* iPhone 12 Pro specific styles (390px width) */
+@media (min-width: 375px) and (max-width: 428px) {
+    .header {
+        padding: 14px 18px;
+    }
+    
+    .header__logo {
+        max-width: 260px;
+    }
+    
+    .header__logo img {
+        height: 50px;
+    }
+    
+    .header__menu-btn,
+    .header__icon {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+/* Surface Pro 7 and larger tablets (1368px and up) */
 @media (min-width: 1200px) {
+    .header {
+        padding: 22px 32px;
+    }
+    
+    .header__logo {
+        max-width: 420px;
+    }
+    
+    .header__logo img {
+        height: 80px;
+    }
+    
+    .header__menu-btn,
+    .header__icon {
+        font-size: 22px;
+        padding: 12px;
+    }
+    
     .product-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
-    .category-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+      /* Keep 2 columns for 3x2 layout on all devices */
+    /* .category-grid override removed to maintain 3x2 layout */
     
     .product-detail {
         display: grid;
