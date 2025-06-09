@@ -114,6 +114,7 @@ ul, ol {
 /* Navigation tabs */
 .nav-tabs {
     display: flex;
+    justify-content: center;
     overflow-x: auto;
     white-space: nowrap;
     padding: 8px 16px;
@@ -1455,5 +1456,24 @@ ul, ol {
 @media (min-width: 1200px) {
     .header {
         min-height: 100px;
+    }
+}
+
+/* Orientation-specific grid layouts */
+@media (orientation: portrait) {
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (orientation: landscape) {
+    /* INDEX page: 3 columns */
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Product pages: 4 columns */
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
