@@ -10,11 +10,11 @@
     .header__logo img {
         height: 70px;
     }
-    
-    /* Navigation */
+      /* Navigation */
     .nav-tabs {
         justify-content: center;
         padding: 15px;
+        top: 87px; 
     }
     
     .nav-tabs__item {
@@ -40,45 +40,76 @@
     .product-card__title {
         font-size: 16px;
     }
-    
-    /* Product Detail */
     .product-detail {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
         padding: 30px;
         max-width: 1200px;
         margin: 0 auto;
     }
     
+    .product-detail__back {
+        grid-column: 1 / -1;
+    }
+    
+    .product-detail__image-container,
+    .product-detail__thumbnails {
+        grid-column: 1;
+    }
+    
     .product-detail__image-container {
-        max-width: 500px;
-        margin: 0 auto 30px;
+        max-width: none;
+        margin: 0 0 10px 0; 
     }
     
     .product-detail__thumbnails {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 100%;
+        margin: 0 0 10px; 
+    }
+
+    .product-detail__thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-detail__thumbnail img {
+        width: 100%;
+        height: auto;
     }
     
-    .product-detail__thumbnail {
-        width: 100px;
-        height: 100px;
+    .product-detail__title,
+    .product-detail__rating,
+    .product-detail__price,
+    .product-detail__tabs,
+    .product-detail__description,
+    .product-detail__quantity,
+    .product-detail__add-to-cart {
+        grid-column: 2;
+        text-align: left;
+        margin: 0 0 20px;
     }
     
     .product-detail__title {
         font-size: 24px;
-        text-align: center;
     }
     
     .product-detail__rating {
-        justify-content: center;
+        justify-content: flex-start;
         font-size: 16px;
     }
     
     .product-detail__price {
         font-size: 24px;
-        text-align: center;
     }
     
     .product-detail__tabs {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     .product-detail__tab {
@@ -86,20 +117,20 @@
     }
     
     .product-detail__description {
-        max-width: 800px;
-        margin: 0 auto 30px;
+        max-width: none;
         font-size: 16px;
     }
     
     .product-detail__quantity {
         max-width: 200px;
-        margin: 0 auto 30px;
+        margin: 0 0 30px 0;
     }
     
     .product-detail__add-to-cart {
         max-width: 300px;
-        margin: 0 auto;
+        margin: 0;
     }
+    
       /* Home Page - Keep 2 columns for 3x2 layout */
     /* .category-grid override removed to maintain 3x2 layout */
     
@@ -172,15 +203,15 @@
 /* iPhone 12 Pro specific styles (390px width) */
 @media (min-width: 375px) and (max-width: 428px) {
     .header {
-        padding: 14px 18px;
+        padding: 18px 24px; 
     }
     
     .header__logo {
-        max-width: 260px;
+        max-width: 350px;   
     }
     
     .header__logo img {
-        height: 50px;
+        height: 70px;      
     }
     
     .header__menu-btn,
@@ -190,18 +221,18 @@
     }
 }
 
-/* Surface Pro 7 and larger tablets (1368px and up) */
+/* Surface Pro 7  */
 @media (min-width: 1200px) {
     .header {
-        padding: 22px 32px;
+        padding: 18px 24px; 
     }
     
     .header__logo {
-        max-width: 420px;
+        max-width: 350px;   
     }
     
     .header__logo img {
-        height: 80px;
+        height: 70px;       
     }
     
     .header__menu-btn,
@@ -218,6 +249,7 @@
     
     .product-detail {
         display: grid;
+        grid-auto-flow: dense;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
         align-items: start;
@@ -266,4 +298,333 @@
         grid-column: 2;
         grid-row: 2 / span 3;
     }
+}
+
+/* Hide landscape actions in portrait mode */
+.header__landscape-actions {
+    display: none;
+}
+
+/* Hide About Us section in portrait mode */
+.about-us {
+    display: none;
+}
+
+/* Landscape orientation styles */
+@media (orientation: landscape) {
+    /* Show landscape-specific icons and hide default icons */
+    .header__landscape-actions {
+        display: flex;
+    }
+    .header__icons {
+        display: none;
+    }
+
+    /* Header layout for landscape - logo left, search center, hamburger right */
+    .header {
+        display: grid;
+        grid-template-columns: 200px 1fr auto;
+        gap: 20px;
+        align-items: center;
+        padding: 12px 24px;
+    }
+    /* Move logo to left */
+    .header__logo {
+        justify-self: start;
+        margin: 0;
+        max-width: 180px;
+        flex: none;
+    }
+    .header__logo img {
+        height: 50px;
+    }
+    
+    /* Hide original icons and menu button in landscape */
+    .header__icons,
+    .header > .header__menu-btn {
+        display: none;
+    }
+    
+    /* Show landscape-specific header actions */
+    .header__landscape-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-self: end;
+    }
+    
+    .header__landscape-icon {
+        color: #333;
+        font-size: 18px;
+        padding: 8px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+    
+    .header__landscape-icon:hover {
+        background-color: #f5f5f5;
+        color: #0057B8;
+    }
+      .header__landscape-icon--cart {
+        color: #0057B8;
+    }
+    
+    /* Add text to user icon in landscape */
+    .header__landscape-icon--user {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+    }
+    
+    .header__landscape-icon--user::after {
+        content: "Login / Sign Up";
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    /* Style the hamburger menu within landscape actions */
+    .header__landscape-actions .header__menu-btn {
+        font-size: 20px;
+        color: #333;
+        padding: 8px;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .header__landscape-actions .header__menu-btn:hover {
+        background-color: #f5f5f5;
+    }
+      /* Always show search bar in center in landscape */
+    .search-bar {
+        display: flex !important;
+        margin: 0;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 25px;
+        padding: 8px 16px;
+        justify-self: center;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .search-bar__back {
+        display: none;
+    }
+    
+    .search-bar__input {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+    
+    .search-bar__search-icon {
+        margin: 0 8px 0 0;
+        color: #6c757d;
+        font-size: 16px;
+    }
+    
+    .search-bar__clear {
+        font-size: 16px;
+        color: #6c757d;
+    }
+
+    /* Make banner/carousel larger in landscape mode */
+    .carousel__slide img {
+        height: 280px;
+    }
+    
+    /* Add more whitespace around carousel and categories */
+    .carousel {
+        padding: 0 24px;
+    }
+      .category-grid {
+        padding: 16px 24px;
+    }
+    
+    /* Show About Us section in landscape mode */
+    .about-us {
+        display: block;
+    }
+}
+
+/* Landscape orientation with larger screens */
+@media (orientation: landscape) and (min-width: 768px) {
+    /* Enhanced header for larger landscape screens */
+    .header {
+        grid-template-columns: 250px 1fr auto;
+        gap: 30px;
+        padding: 15px 40px;
+    }
+    
+    .header__logo {
+        max-width: 220px;
+    }
+    
+    .header__logo img {
+        height: 60px;
+    }
+    
+    .header__landscape-actions {
+        gap: 16px;
+    }
+    
+    .header__landscape-icon {
+        font-size: 20px;
+        padding: 10px;
+    }
+      .header__landscape-actions .header__menu-btn {
+        font-size: 22px;
+        padding: 10px;
+    }
+    
+    /* Adjust user text for larger screens */
+    .header__landscape-icon--user::after {
+        font-size: 15px;
+    }
+      .search-bar {
+        max-width: 400px;
+        padding: 10px 20px;
+    }
+    
+    .search-bar__input {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .carousel__slide img {
+        height: 320px;
+    }
+    
+    /* More padding for larger screens */
+    .carousel {
+        padding: 0 340px;
+    }
+    
+    .category-grid {
+        padding: 20px 340px;
+    }
+}
+
+/* Landscape orientation with very large screens */
+@media (orientation: landscape) and (min-width: 1200px) {
+    /* Premium header for very large landscape screens */
+    .header {
+        grid-template-columns: 300px 1fr auto;
+        gap: 40px;
+        padding: 18px 60px;
+    }
+    
+    .header__logo {
+        max-width: 280px;
+    }
+    
+    .header__logo img {
+        height: 70px;
+    }
+    
+    .header__landscape-actions {
+        gap: 20px;
+    }
+    
+    .header__landscape-icon {
+        font-size: 22px;
+        padding: 12px;
+    }
+      .header__landscape-actions .header__menu-btn {
+        font-size: 24px;
+        padding: 12px;
+    }
+    
+    /* Adjust user text for very large screens */
+    .header__landscape-icon--user::after {
+        font-size: 16px;
+    }
+      .search-bar {
+        max-width: 480px;
+        padding: 12px 24px;
+        border-radius: 30px;
+    }
+    
+    .search-bar__input {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+    
+    .carousel__slide img {
+        height: 400px;
+    }
+    
+    /* Even more padding for very large screens */
+    .carousel {
+        padding: 0 60px;
+    }
+    
+    .category-grid {
+        padding: 24px 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Portrait mode - normal stacked layout for product details */
+@media (orientation: portrait) {
+  .product-detail {
+    display: block !important;
+    padding: 15px;
+  }
+  .product-detail__back,
+  .product-detail__image-container,
+  .product-detail__thumbnails,
+  .product-detail__title,
+  .product-detail__rating,
+  .product-detail__price,
+  .product-detail__tabs,
+  .product-detail__description,
+  .product-detail__quantity,
+  .product-detail__add-to-cart {
+    grid-column: auto !important;
+    text-align: center !important;
+    margin: 0 0 15px !important;
+  }
+  .product-detail__rating {
+    justify-content: center !important;
+  }
+  .product-detail__tabs {
+    justify-content: center !important;
+  }
+}
+
+/* Two-column grid for product detail - LANDSCAPE ONLY */
+@media (orientation: landscape) {
+  .product-detail {
+    display: grid !important;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+  }
+  .product-detail__back {
+    grid-column: 1 / -1 !important;
+  }
+  .product-detail__image-container,
+  .product-detail__thumbnails {
+    grid-column: 1 !important;
+  }
+  .product-detail__info {
+    grid-column: 2 !important;
+  }
+  .product-detail__title,
+  .product-detail__rating,
+  .product-detail__price,
+  .product-detail__tabs,
+  .product-detail__description,
+  .product-detail__quantity,
+  .product-detail__add-to-cart {
+    text-align: left !important;
+    margin: 0 0 20px !important;
+  }
+  .product-detail__rating {
+    justify-content: flex-start !important;
+  }
 }

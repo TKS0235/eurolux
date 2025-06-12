@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Listing - Eurolux Australia</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
+<body>    <!-- Header -->    <header class="header">
         <button class="header__menu-btn">
             <i class="fas fa-bars"></i>
         </button>
@@ -30,45 +29,56 @@
                 <i class="fas fa-shopping-cart"></i>
             </a>
         </div>
+        <div class="search-bar hidden" id="searchBar">
+            <a href="#" class="search-bar__back"><i class="fas fa-arrow-left"></i></a>
+            <input type="text" class="search-bar__input" placeholder="Search…">
+            <i class="fas fa-search search-bar__search-icon"></i>
+            <a href="#" class="search-bar__clear"><i class="fas fa-times"></i></a>
+        </div>        <!-- Landscape-specific header actions -->
+        <div class="header__landscape-actions">
+            <a href="#" class="header__landscape-icon header__landscape-icon--user">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="#" class="header__landscape-icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="cart.html" class="header__landscape-icon header__landscape-icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
-    <!-- Search Bar (initially hidden) -->
-    <div class="search-bar hidden" id="searchBar">
-        <a href="#" class="search-bar__back">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <input type="text" class="search-bar__input" placeholder="Aqua Blade">
-        <i class="fas fa-search search-bar__search-icon"></i>
-        <a href="#" class="search-bar__clear">
-            <i class="fas fa-times"></i>
-        </a>
-    </div>
-
-    <!-- Navigation Tabs -->
-    <nav class="nav-tabs">
-        <a href="aqua-blade.html" class="nav-tabs__item">Aqua Blade</a>
-        <a href="cookware.html" class="nav-tabs__item nav-tabs__item--active">Cookware</a>
-        <a href="#" class="nav-tabs__item">Rake Broom</a>
-        <a href="#" class="nav-tabs__item">Trimmer Head</a>
-        <a href="#" class="nav-tabs__item">Stain Remover</a>
-    </nav>
-
-    <!-- Sort By -->
-    <div class="sort-by">
-        <i class="fas fa-th-list"></i>
-        <span class="sort-by__label">Sort By</span>
-        <i class="fas fa-chevron-down sort-by__icon"></i>
-    </div>
-
-    <!-- Product Grid -->
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <a href="index.html" class="breadcrumb__link">Home</a>
+        <span class="breadcrumb__separator">></span>
+        <span class="breadcrumb__current">Cookware</span>
+    </nav>    <!-- Search Results Header -->
+    <div class="search-results-header">
+        <h1 class="search-results-title">Search Result for</h1>
+        <h2 class="search-results-category">Cookware (16)</h2>
+        <div class="search-results-controls">
+            <button class="filters-btn">
+                <span>Filters</span>
+                <i class="fas fa-sliders-h"></i>
+            </button>            <button class="sort-btn">
+                <i class="fas fa-th-list"></i>
+                <span>Sort By</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div><!-- Product Grid -->
     <div class="product-grid">
-        <!-- Product Card 1 -->
+        <!-- Product Card 1 - Frying Pan 20cm -->
         <div class="product-card">
             <a href="product-detail-frying-pan.html" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade Full Set" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Frying Pan 20cm" class="product-card__image">
             </a>
             <div class="product-card__info">
                 <h3 class="product-card__title">Frying Pan 20cm</h3>
@@ -80,7 +90,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <span class="product-card__reviews">4.8 (15 Reviews)</span>
+                    <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
                     <div class="product-card__price">$174.50</div>
@@ -91,16 +101,16 @@
             </div>
         </div>
 
-        <!-- Product Card 2 -->
+        <!-- Product Card 2 - Frying Pan 24cm -->
         <div class="product-card">
             <a href="#" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade 30cm Set" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Frying Pan 24cm" class="product-card__image">
             </a>
             <div class="product-card__info">
-                <h3 class="product-card__title">Aqua Blade 30cm Set</h3>
+                <h3 class="product-card__title">Frying Pan 24cm</h3>
                 <div class="product-card__rating">
                     <div class="product-card__stars">
                         <i class="fas fa-star"></i>
@@ -112,7 +122,7 @@
                     <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
-                    <div class="product-card__price">$39.95</div>
+                    <div class="product-card__price">$174.50</div>
                     <button class="product-card__cart-btn">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -120,16 +130,16 @@
             </div>
         </div>
 
-        <!-- Product Card 3 -->
+        <!-- Product Card 3 - Frying Pan 28cm -->
         <div class="product-card">
             <a href="#" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade 22cm Set" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Frying Pan 28cm" class="product-card__image">
             </a>
             <div class="product-card__info">
-                <h3 class="product-card__title">Aqua Blade 22cm Set</h3>
+                <h3 class="product-card__title">Frying Pan 28cm</h3>
                 <div class="product-card__rating">
                     <div class="product-card__stars">
                         <i class="fas fa-star"></i>
@@ -141,7 +151,7 @@
                     <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
-                    <div class="product-card__price">$39.95</div>
+                    <div class="product-card__price">$174.50</div>
                     <button class="product-card__cart-btn">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -149,16 +159,16 @@
             </div>
         </div>
 
-        <!-- Product Card 4 -->
+        <!-- Product Card 4 - Frying Pan 32cm -->
         <div class="product-card">
             <a href="#" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade Apartment Set" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Frying Pan 32cm" class="product-card__image">
             </a>
             <div class="product-card__info">
-                <h3 class="product-card__title">Aqua Blade Apartment Set</h3>
+                <h3 class="product-card__title">Frying Pan 32cm</h3>
                 <div class="product-card__rating">
                     <div class="product-card__stars">
                         <i class="fas fa-star"></i>
@@ -170,7 +180,7 @@
                     <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
-                    <div class="product-card__price">$39.95</div>
+                    <div class="product-card__price">$174.50</div>
                     <button class="product-card__cart-btn">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -178,16 +188,16 @@
             </div>
         </div>
 
-        <!-- Product Card 5 -->
+        <!-- Product Card 5 - Sauté Pan 24cm -->
         <div class="product-card">
             <a href="#" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade Large 30cm" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Sauté Pan 24cm" class="product-card__image">
             </a>
             <div class="product-card__info">
-                <h3 class="product-card__title">Aqua Blade Large 30cm</h3>
+                <h3 class="product-card__title">Sauté Pan 24cm</h3>
                 <div class="product-card__rating">
                     <div class="product-card__stars">
                         <i class="fas fa-star"></i>
@@ -199,7 +209,7 @@
                     <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
-                    <div class="product-card__price">$39.95</div>
+                    <div class="product-card__price">$174.50</div>
                     <button class="product-card__cart-btn">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -207,16 +217,16 @@
             </div>
         </div>
 
-        <!-- Product Card 6 -->
+        <!-- Product Card 6 - Sauté Pan 28cm -->
         <div class="product-card">
             <a href="#" class="product-card__image-container">
                 <button class="product-card__wishlist">
                     <i class="far fa-heart"></i>
                 </button>
-                <img src="images/products/frying-pan-20cm.webp" alt="Aqua Blade Large 22cm" class="product-card__image">
+                <img src="images/products/frying-pan-20cm.webp" alt="Sauté Pan 28cm" class="product-card__image">
             </a>
             <div class="product-card__info">
-                <h3 class="product-card__title">Aqua Blade Large 22cm</h3>
+                <h3 class="product-card__title">Sauté Pan 28cm</h3>
                 <div class="product-card__rating">
                     <div class="product-card__stars">
                         <i class="fas fa-star"></i>
@@ -228,7 +238,65 @@
                     <span class="product-card__reviews">4.9 (10 Review)</span>
                 </div>
                 <div class="product-card__price-cart">
-                    <div class="product-card__price">$39.95</div>
+                    <div class="product-card__price">$174.50</div>
+                    <button class="product-card__cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 7 - Casserole Pan 24cm -->
+        <div class="product-card">
+            <a href="#" class="product-card__image-container">
+                <button class="product-card__wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="images/products/frying-pan-20cm.webp" alt="Casserole Pan 24cm" class="product-card__image">
+            </a>
+            <div class="product-card__info">
+                <h3 class="product-card__title">Casserole Pan 24cm</h3>
+                <div class="product-card__rating">
+                    <div class="product-card__stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="product-card__reviews">4.9 (10 Review)</span>
+                </div>
+                <div class="product-card__price-cart">
+                    <div class="product-card__price">$174.50</div>
+                    <button class="product-card__cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 8 - Casserole Pan 28cm -->
+        <div class="product-card">
+            <a href="#" class="product-card__image-container">
+                <button class="product-card__wishlist">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="images/products/frying-pan-20cm.webp" alt="Casserole Pan 28cm" class="product-card__image">
+            </a>
+            <div class="product-card__info">
+                <h3 class="product-card__title">Casserole Pan 28cm</h3>
+                <div class="product-card__rating">
+                    <div class="product-card__stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="product-card__reviews">4.9 (10 Review)</span>
+                </div>
+                <div class="product-card__price-cart">
+                    <div class="product-card__price">$174.50</div>
                     <button class="product-card__cart-btn">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -296,9 +364,66 @@
         
         <div class="filter-modal__buttons">
             <button class="filter-modal__clear">Clear (1)</button>
-            <button class="filter-modal__apply">Apply</button>
-        </div>
+            <button class="filter-modal__apply">Apply</button>        </div>
     </div>
+
+    <!-- Footer (landscape only) -->    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section">
+                <h4 class="footer__title">SERVICES</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Delivery Information</a></li>
+                    <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+                    <li><a href="#" class="footer__link">Customer Service</a></li>
+                    <li><a href="#" class="footer__link">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">ABOUT US</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">About Eurolux</a></li>
+                    <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer__link">Site Map</a></li>
+                    <li><a href="#" class="footer__link">Search Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">INFORMATION</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Brand</a></li>
+                    <li><a href="#" class="footer__link">Gift Certificates</a></li>
+                    <li><a href="#" class="footer__link">Affiliate</a></li>
+                    <li><a href="#" class="footer__link">Specials</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">PHONE ORDERS</h4>
+                <div class="footer__phone">
+                    <p class="footer__phone-number">1300 123 456</p>
+                    <p class="footer__phone-hours">Monday - Friday: 9am - 5pm</p>
+                    <p class="footer__phone-hours">Saturday: 9am - 2pm</p>
+                </div>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">STAY IN TOUCH</h4>
+                <div class="footer__newsletter">
+                    <p class="footer__newsletter-text">Subscribe to our newsletter</p>
+                    <form class="footer__newsletter-form">
+                        <input type="email" class="footer__newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="footer__newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Eurolux Australia. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/cart-links.js"></script>

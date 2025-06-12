@@ -371,6 +371,7 @@ class CartManager {
         const cartVAT = document.getElementById('cartVAT');
         const cartOrderTotal = document.getElementById('cartOrderTotal');
         const cartFinalTotal = document.getElementById('cartFinalTotal');
+        const cartSummaryDetails = document.getElementById('cartSummaryDetails');
         
         if (!cartItemsContainer) return;
 
@@ -383,7 +384,17 @@ class CartManager {
                     <a href="index.html" class="btn btn--primary" style="margin-top: 20px; display: inline-block; padding: 12px 24px; background: #0057B8; color: white; text-decoration: none; border-radius: 8px;">Continue Shopping</a>
                 </div>
             `;
+            // Hide or clear order summary and totals
+            if (cartItemCount) cartItemCount.textContent = '';
+            if (cartSubtotal) cartSubtotal.textContent = '$0.00';
+            if (cartSubtotalTotal) cartSubtotalTotal.textContent = '$0.00';
+            if (cartVAT) cartVAT.textContent = '$0';
+            if (cartOrderTotal) cartOrderTotal.textContent = '$0.00';
+            if (cartFinalTotal) cartFinalTotal.textContent = '$0.00';
+            if (cartSummaryDetails) cartSummaryDetails.style.display = 'none';
             return;
+        } else {
+            if (cartSummaryDetails) cartSummaryDetails.style.display = '';
         }
 
         // Render cart items

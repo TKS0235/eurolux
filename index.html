@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eurolux Australia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Eurolux Australia</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
+<body>    <!-- Header -->    <header class="header">
         <button class="header__menu-btn">
             <i class="fas fa-bars"></i>
         </button>
@@ -30,12 +28,32 @@
                 <i class="fas fa-shopping-cart"></i>
             </a>
         </div>
+        <div class="search-bar hidden" id="searchBar">
+          <a href="#" class="search-bar__back"><i class="fas fa-arrow-left"></i></a>
+          <input type="text" class="search-bar__input" placeholder="Search…">
+          <i class="fas fa-search search-bar__search-icon"></i>
+          <a href="#" class="search-bar__clear"><i class="fas fa-times"></i></a>
+        </div>        <!-- Landscape-specific header actions -->
+        <div class="header__landscape-actions">
+            <a href="#" class="header__landscape-icon header__landscape-icon--user">
+                <i class="far fa-user"></i>
+            </a>
+            <a href="#" class="header__landscape-icon">
+                <i class="far fa-heart"></i>
+            </a>
+            <a href="cart.html" class="header__landscape-icon header__landscape-icon--cart">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
     <!-- Navigation Tabs -->
     <nav class="nav-tabs">
         <a href="aqua-blade.html" class="nav-tabs__item">Aqua Blade</a>
-        <a href="product-listing.html" class="nav-tabs__item">Cookware</a>
+        <a href="cookware.html" class="nav-tabs__item">Cookware</a>
         <a class="nav-tabs__item">Rake Broom</a>
         <a class="nav-tabs__item">Trimmer Head</a>
         <a class="nav-tabs__item">Stain Remover</a>
@@ -107,9 +125,93 @@
             <div class="category-card__title">Stain Remover</div>
             <div class="category-card__arrow">
                 <i class="fas fa-arrow-right"></i>
+            </div>        </a>
+    </div>    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="about-us__container">
+            <h2 class="about-us__title">About Us</h2>
+            <div class="about-us__content">
+                <p class="about-us__description">
+                    Eurolux Australia is a family owned business, established in Australia in 1999.
+                </p>
+                
+                <p class="about-us__description">
+                    We are committed to sourcing and supplying only the most superior home and garden products and to providing the highest level of customer service. All our products are of the highest quality and are considered among the best of their kind. Each product has been chosen for its quality, durability and reliability. Our product range includes Eurolux Cookware: German made, non-stick, suitable from stove-top to oven cookware along with a growing number of innovative home and gardening tools of the highest quality. All our products are proudly manufactured in Europe or Australia.
+                </p>
+                
+                <p class="about-us__description">
+                    The Sure Load was added to our range only a few years ago and has been designed by Eurolux Australia, and is manufactured in Australia. It was developed in response to the enormous frustration often faced by gardeners, with fiddly and complicated line changes to their existing trimmer heads. The unique Sure Load system fits all petrol driven trimmers and requires no effort to reload.
+                </p>
+                
+                <p class="about-us__description">
+                    We retail our products online, and also maintain close contact with our customers by attending the major Home and Garden shows, Field days and Trade Events. We also have a growing number or stockists throughout Australia.
+                </p>
+                
+                <p class="about-us__description">
+                    We look forward to sharing our wonderful range with you and welcome your comments and feedback.
+                </p>
             </div>
-        </a>
-    </div>
+        </div>
+    </section>
+
+    <!-- Footer (landscape only) -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section">
+                <h4 class="footer__title">SERVICES</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Delivery Information</a></li>
+                    <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+                    <li><a href="#" class="footer__link">Customer Service</a></li>
+                    <li><a href="#" class="footer__link">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">ABOUT US</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">About Eurolux</a></li>
+                    <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer__link">Site Map</a></li>
+                    <li><a href="#" class="footer__link">Search Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">INFORMATION</h4>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Brand</a></li>
+                    <li><a href="#" class="footer__link">Gift Certificates</a></li>
+                    <li><a href="#" class="footer__link">Affiliate</a></li>
+                    <li><a href="#" class="footer__link">Specials</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">PHONE ORDERS</h4>
+                <div class="footer__phone">
+                    <p class="footer__phone-number">1300 123 456</p>
+                    <p class="footer__phone-hours">Monday - Friday: 9am - 5pm</p>
+                    <p class="footer__phone-hours">Saturday: 9am - 2pm</p>
+                </div>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__title">STAY IN TOUCH</h4>
+                <div class="footer__newsletter">
+                    <p class="footer__newsletter-text">Subscribe to our newsletter</p>
+                    <form class="footer__newsletter-form">
+                        <input type="email" class="footer__newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="footer__newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Eurolux Australia. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/cart-links.js"></script>
