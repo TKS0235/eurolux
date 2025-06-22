@@ -432,7 +432,8 @@ class CartManager {
 
 // Initialize cart manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.cartManager = new CartManager();
+    // Initialize CartManager to handle add-to-cart events
+    const cartManager = new CartManager();
     
     // Render cart page if we're on it
     if (window.location.pathname.includes('cart.html')) {

@@ -208,17 +208,31 @@ function handleQuantityChange(e) {
 
 function addToCart(e) {
     e.preventDefault();
-    // Cart logic is now handled by CartManager in cart.js
-    // This function remains for compatibility but actual cart functionality
-    // is handled by the CartManager class
+    // Add product to cart and redirect to cart page
+    const detail = document.querySelector('.product-detail');
+    if (!detail) return;
+    const id = detail.dataset.id || window.location.pathname;
+    const name = document.querySelector('.product-detail__title')?.textContent.trim();
+    const priceText = document.querySelector('.product-detail__price')?.textContent.replace(/[^0-9.]/g, '');
+    const price = parseFloat(priceText) || 0;
+    const qty = parseInt(document.querySelector('.product-detail__quantity-input')?.value) || 1;
+    // Add to cart
+    cartManager.addItem({ id, name, price, qty });
+    // Redirect
+    window.location.href = 'cart.html';
 }
 
 function quickAddToCart(e) {
     e.preventDefault();
     e.stopPropagation();
-    // Cart logic is now handled by CartManager in cart.js
-    // This function remains for compatibility but actual cart functionality
-    // is handled by the CartManager class
+    // Quick add from listing and render badge
+    const card = e.currentTarget.closest('.product-card');
+    if (!card) return;
+    const id = card.dataset.id;
+    const name = card.querySelector('.product-card__title')?.textContent.trim();
+    const price = parseFloat(card.querySelector('.product-card__price')?.textContent.replace(/[^0-9.]/g, '')) || 0;
+    cartManager.addItem({ id, name, price, qty: 1 });
+    cartManager.init(); // update badge
 }
 
 function switchTab(e) {
