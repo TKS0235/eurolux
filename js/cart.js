@@ -29,6 +29,54 @@ class CartManager {
                 e.preventDefault();
                 this.handleProductDetailAdd();
             }
+
+            // Cart page: quantity buttons
+            if (e.target.classList.contains('cart-item__quantity-btn')) {
+                const cartItem = e.target.closest('.cart-item');
+                if (cartItem) {
+                    const productId = cartItem.getAttribute('data-product-id');
+                    const input = cartItem.querySelector('.cart-item__quantity-input');
+                    let newQty = parseInt(input.value);
+                    if (e.target.textContent.trim() === '+') {
+                        newQty += 1;
+                    } else if (e.target.textContent.trim() === '−') {
+                        newQty -= 1;
+                    }
+                    this.updateQuantity(productId, newQty);
+                }
+            }
+
+            // Cart page: remove item (support clicking the trash icon too)
+            let removeBtn = null;
+            if (e.target.classList.contains('cart-item__remove-btn')) {
+                removeBtn = e.target;
+            } else if (
+                e.target.tagName === 'I' &&
+                e.target.classList.contains('fa-trash') &&
+                e.target.closest('.cart-item__remove-btn')
+            ) {
+                removeBtn = e.target.closest('.cart-item__remove-btn');
+            }
+            if (removeBtn) {
+                const cartItem = removeBtn.closest('.cart-item');
+                if (cartItem) {
+                    const productId = cartItem.getAttribute('data-product-id');
+                    this.removeFromCart(productId);
+                }
+            }
+        });
+
+        // Cart page: quantity input direct edit
+        document.addEventListener('change', (e) => {
+            if (e.target.classList.contains('cart-item__quantity-input')) {
+                const cartItem = e.target.closest('.cart-item');
+                if (cartItem) {
+                    const productId = cartItem.getAttribute('data-product-id');
+                    let newQty = parseInt(e.target.value);
+                    if (isNaN(newQty) || newQty < 1) newQty = 1;
+                    this.updateQuantity(productId, newQty);
+                }
+            }
         });
     }
 
@@ -407,9 +455,12 @@ class CartManager {
                     <h3 class="cart-item__title">${item.title}</h3>
                     <div class="cart-item__price">$${item.price.toFixed(2)}</div>
                     <div class="cart-item__quantity">
-                        <button class="cart-item__quantity-btn" onclick="cartManager.updateQuantity('${item.id}', ${item.quantity - 1})">−</button>
-                        <input type="text" value="${item.quantity}" class="cart-item__quantity-input" onchange="cartManager.updateQuantity('${item.id}', parseInt(this.value))">
-                        <button class="cart-item__quantity-btn" onclick="cartManager.updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                        <button class="cart-item__quantity-btn">−</button>
+                        <input type="text" value="${item.quantity}" class="cart-item__quantity-input">
+                        <button class="cart-item__quantity-btn">+</button>
+                        <button class="cart-item__remove-btn" title="Remove item" style="margin-left:10px;color:#c00;background:none;border:none;cursor:pointer;">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </div>
                 </div>
             </div>
